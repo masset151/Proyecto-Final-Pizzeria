@@ -9,7 +9,7 @@ const {generarJWT} = require('../helpers/jwt')
 const crearUsuario = async (req,res = response) => {
     const {email,nombre,password} = req.body;
     try{
-        console.log("hola")
+        console.log(email,nombre,password);
         const usuario = await Usuario.findOne({email});
 
         if(usuario){
@@ -19,7 +19,7 @@ const crearUsuario = async (req,res = response) => {
         }
 
         const dbUser = new Usuario(req.body);
-
+        console.log(dbUser);
         const salt = bcrypt.genSaltSync(10);
         dbUser.password = bcrypt.hashSync(password,salt)
 
