@@ -14,6 +14,7 @@ app.use(express.static('public'));
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(cors({origin:'http://devproyecto.herokuapp.com/'}));
+app.use(cors({origin:'http://http://localhost:4200'}));
 
 //Routes
 
