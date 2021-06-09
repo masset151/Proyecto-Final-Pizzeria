@@ -1,6 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
-//const cors = require('cors')
+const cors = require('cors')
 const path = require('path')
 const app = express();
 const {mongoose} = require("./database")
@@ -13,7 +13,7 @@ app.use(express.static('public'));
 //Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
-
+app.use(cors({origin:'http://localhost:4200'}))
 
 
 //Routes
