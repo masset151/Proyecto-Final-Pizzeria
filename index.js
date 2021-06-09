@@ -13,7 +13,7 @@ app.use(express.static('public'));
 //Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(cors({origin:'http://localhost:4200'}));
+app.use(cors({origin:'http://devproyecto.herokuapp.com/'}));
 
 //Routes
 
